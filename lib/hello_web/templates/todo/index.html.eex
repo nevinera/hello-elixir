@@ -6,20 +6,20 @@
       <th>Description</th>
 
       <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-<%= for todo <- @todos do %>
-    <tr>
-      <td><%= todo.description %></td>
+    <%= for todo <- @todos do %>
+      <tr>
+        <td><%= todo.description %></td>
 
-      <td>
-        <%= link "Show", to: Routes.todo_path(@conn, :show, todo) %>
-        <%= link "Edit", to: Routes.todo_path(@conn, :edit, todo) %>
-        <%= link "Delete", to: Routes.todo_path(@conn, :delete, todo), method: :delete, data: [confirm: "Are you sure?"] %>
-      </td>
-    </tr>
-<% end %>
+        <td><%= link "Show", to: Routes.todo_path(@conn, :show, todo) %></td>
+        <td><%= link "Edit", to: Routes.todo_path(@conn, :edit, todo) %></td>
+        <td><%= link "Delete", to: Routes.todo_path(@conn, :delete, todo), method: :delete, data: [confirm: "Are you sure?"] %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
